@@ -1,0 +1,66 @@
+.logo__changecolor {
+  color: var(--color-primary);
+}
+
+.landing__welcome {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.landing__welcome h2 {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.landing__welcome h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.landing__welcome p {
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.landing__welcome button {
+  width: 10rem;
+  border: none;
+  border-radius: 4px;
+  height: 2rem;
+  color: var(--color-grey-1);
+  background-color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+}
+
+@media (min-width: 426px) {
+    .landing__welcome {
+        padding: 2rem;
+    }
+
+    .landing__welcome h2 {
+        font-size: 2rem;
+    }
+
+    .landing__welcome h1{
+        font-size: 3rem;
+    }
+
+    .landing__welcome p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .landing__welcome button {
+        transition: 400ms;
+        cursor: pointer;
+    }
+
+    .landing__welcome button:hover {
+        background-color: var(--color-primary-2);
+    }
+}
