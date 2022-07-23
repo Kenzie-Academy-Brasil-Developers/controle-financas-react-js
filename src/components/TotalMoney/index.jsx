@@ -1,5 +1,5 @@
 import "./style.css";
 
-function TotalMoney() {}
+function TotalMoney({ transaction }) {}
 
 export default TotalMoney;

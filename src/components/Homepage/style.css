@@ -1,0 +1,19 @@
+.homepage {
+    background-color: var(--color-grey-1);
+}
+
+.homepage__content {
+    display: flex;
+    padding: 2%;
+    width: 98%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    box-sizing: border-box;
+}
+
+.content__action {
+    width: 40%;
+    max-width: 18rem;
+}

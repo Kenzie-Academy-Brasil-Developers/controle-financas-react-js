@@ -1,0 +1,82 @@
+.content__form {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  border: 1px solid var(--color-grey-2);
+  background-color: var(--color-grey-1);
+}
+
+input,
+select {
+  border: none;
+  background-color: var(--color-grey-2);
+  border-radius: 4px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  font-family: inherit;
+  height: 2.7rem;
+  color: var(--color-grey-3);
+}
+
+.content__form label {
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__description p {
+  font-size: 0.75rem;
+  margin: 0.5rem 0;
+  color: var(--color-grey-3);
+}
+
+.form__half,
+.form__description {
+  padding: 0 1rem;
+}
+
+.form__half {
+  display: flex;
+  gap: 1rem;
+}
+
+.half__input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form__input--half {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.content__form button {
+  margin: 0 1rem;
+  border-radius: 4px;
+  height: 2.7rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+:hover,
+::placeholder {
+  transition: 400ms;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}

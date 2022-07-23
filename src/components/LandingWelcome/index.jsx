@@ -6,7 +6,7 @@ function LandingWelcome({setLoggedIn}) {
             <h2><span className="logo__changecolor">Nu</span> Kenzie</h2>
             <h1>Centralize o controle das suas finanças</h1>
             <p>de forma rápida e segura</p>
-            <button type="submit" onClick={setLoggedIn}>Iniciar</button>
+            <button className="primary__button primary__button--landing" type="submit" onClick={setLoggedIn}>Iniciar</button>
         </div>
     )
 }

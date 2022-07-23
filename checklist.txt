@@ -1,0 +1,25 @@
+>> CHECKLIST <<
+
+REACT
+App - OK!
+Card - OK!
+Formulary - 
+Header - OK!
+Homepage - 
+LandingPage - OK!
+LandingWelcome - OK!
+List - OK!
+Navigation - OK!
+TotalMoney - 
+
+CSS
+App - 
+Card -
+Formulary - 
+Header - 
+Homepage -
+LandingPage - OK!
+LandingWelcome - OK!
+List - 
+Navigation - 
+TotalMoney - 
