@@ -1,0 +1,47 @@
+.list__card {
+    background-color: var(--color-grey-1);
+    color: var(--color-grey-4);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    min-height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 1rem;
+}
+
+.list__card--inflow {
+    border-left: 3px solid var(--color-secondary);
+}
+
+.list__card--outflow {
+    border-left: 3px solid var(--color-grey-2);
+}
+
+.card__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__details h3 {
+    font-size: initial;
+    font-weight: 700;
+}
+
+.card__details button {
+    background-color: var(--color-grey-2);
+    border-radius: 4px;
+    height: 1.3rem;
+    width: 1.3rem;
+    background-image: url("../../assets/svg/trash.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    transition: 400ms;
+    opacity: 0.5;
+}
+
+.card__details button:hover {
+    opacity: 1;
+}

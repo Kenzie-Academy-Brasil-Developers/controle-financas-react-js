@@ -1,13 +1,10 @@
-import { useState } from "react";
 import Card from "../Card";
 import Navigation from "../Navigation";
 import "./style.css";
 
-function List({ transactions, setTransactions }) {
-  const [renderList, setRenderList] = useState(transactions);
-
+function List({ transactions, setTransactions, renderer, setRenderer }) {
   function listHandler(e) {
-    setRenderList(
+    setRenderer(
       e.target.value === "inflow"
         ? transactions.filter(({ type }) => type === "Entrada")
         : e.target.value === "outflow"
@@ -15,14 +12,12 @@ function List({ transactions, setTransactions }) {
         : transactions
     );
   }
-  
+
   function handlerDelete(item) {
-    const changes = [setTransactions, setRenderList];
+    const changes = [setTransactions, setRenderer];
 
     changes.forEach((setChanges) =>
-      setChanges(
-        transactions.filter(({ description }) => description !== item.description)
-      )
+      setChanges(transactions.filter(({ id }) => id !== item.id))
     );
   }
 
@@ -30,14 +25,28 @@ function List({ transactions, setTransactions }) {
     <section className="content__list">
       <Navigation handler={listHandler} />
       <ul className="list__items">
-        {renderList.length > 0 ? (
-          renderList.map((item, index) => (
-            <Card details={item} key={index} handler={() => handlerDelete(item)} />
-          ))
+        {renderer.length > 0 ? (
+          renderer.map((item, index) => {
+            return item.type === "Entrada" ? (
+              <Card
+                key={index}
+                details={item}
+                handler={() => handlerDelete(item)}
+                className="list__card list__card--inflow"
+              />
+            ) : (
+              <Card
+                key={index}
+                details={item}
+                handler={() => handlerDelete(item)}
+                className="list__card list__card--outflow"
+              />
+            );
+          })
         ) : (
           <>
-            <h2>Você ainda não possi nenhum lançamento</h2>
-            <figure className="empty-list"></figure>
+            <h2>Você ainda não possui nenhum lançamento</h2>
+            <figure className="loading-component"></figure>
           </>
         )}
       </ul>

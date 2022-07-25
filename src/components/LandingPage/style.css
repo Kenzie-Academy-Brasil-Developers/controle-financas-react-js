@@ -18,7 +18,7 @@
 .landing__bg-figure {
   height: 100%;
   width: 100%;
-  background-image: var(--svg-landing-bg) var(--gradient-landing);
+  background-image: var(--svg-landing-bg), var(--gradient-landing);
   background-size: cover;
   opacity: 0.25;
   position: absolute;

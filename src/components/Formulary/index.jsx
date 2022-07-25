@@ -1,17 +1,39 @@
+import { useState } from "react";
+import Input from "../Input";
 import "./style.css";
 
-function Formulary({ transaction, setTransaction }) {
-  function addTransaction(e) {
+function Formulary({ transactions, setTransactions, setRenderer }) {
+  const [description, setDescription] = useState("");
+  const [valueType, setValueType] = useState("");
+  const [value, setValue] = useState(0);
+
+  function handleSubmit(e) {
     e.preventDefault();
+
+    const newId = !transactions.length ? 1 
+      : Math.max(...transactions.map(index => index.id)) + 1;
+
+    setTransactions([...transactions, { id: newId, description: description, type: valueType, value: value }])
+    setRenderer([...transactions, { id: newId, description: description, type: valueType, value: value }])
+  }
+
+  function getInput(e) {
+    const eventValue = e.target.value
+
+    e.target.name === "descricao"
+      ? setDescription(eventValue)
+      : e.target.name === "valor"
+      ? setValue(parseFloat(eventValue))
+      : setValueType(eventValue);
   }
 
   return (
-    <form onSubmit={addTransaction} className="content__form">
+    <form onSubmit={handleSubmit} className="content__form">
       <div className="form__description">
-        <label htmlFor="descricao">Descrição</label>
-        <input
-          type="text"
+        <Input
+          labelText="Descrição"
           name="descricao"
+          setChange={getInput}
           placeholder="Digite aqui sua descrição"
           className="form__input"
         />
@@ -19,30 +41,27 @@ function Formulary({ transaction, setTransaction }) {
       </div>
       <div className="form__half">
         <div className="form__value half__input">
-          <label htmlFor="valor">Valor</label>
-          <input
-            required
-            type="text"
+          <Input
+            labelText="Valor"
             name="valor"
+            setChange={getInput}
+            placeholder="Valor"
             className="form__input form__input--half"
-            placeholder="Insira um valor"
           />
         </div>
         <div className="form__type half__input">
-          <label htmlFor="tipo">Tipo de valor</label>
-          <select
-            required
+          <Input
+            select
+            labelText="Tipo de valor"
             name="tipo"
+            setChange={getInput}
             className="form__input form__input--half"
-          >
-            <option value="inflow" defaultValue>
-              Entrada
-            </option>
-            <option value="outflow">Despesa</option>
-          </select>
+          />
         </div>
       </div>
-      <button className="primary__button" type="submit">Inserir valor</button>
+      <button className="primary__button" type="submit">
+        Inserir valor
+      </button>
     </form>
   );
 }

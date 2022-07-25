@@ -1,0 +1,28 @@
+.page__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    box-shadow: var(--shadow-1);
+}
+
+.header__title {
+    font-weight: 800;
+}
+
+.title__extra {
+    color: var(--color-primary);
+}
+
+.secondary__button {
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
+    border-radius: 8px;
+    color: var(--color-grey-extra-1);
+    font-weight: 600;
+}
+
+.secondary__button:hover {
+    background-color: var(--color-grey-extra-2);
+}

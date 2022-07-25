@@ -1,0 +1,35 @@
+.list__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__filter h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.filter__buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter__buttons button {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.primary__button--nav {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.secondary__button--nav {
+    color: var(--color-grey-extra-1);
+}
+
+@media (max-width: 769px) {
+    .list__filter h4 {
+        padding-right: 0.5rem;
+    }
+}

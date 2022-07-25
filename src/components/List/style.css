@@ -1,4 +1,42 @@
 .content__list {
-    min-width: 50%;
-    background-color: yellow;
+  min-width: 50%;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 25rem;
+  min-width: 100%;
+  overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+ul::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: var(--color-grey-2); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--color-white); /* creates padding around scroll thumb */
+}
+
+ul > h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.loading-component {
+  background-image: url("../../assets/svg/NoCard.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 99%;
+  width: 99%;
 }

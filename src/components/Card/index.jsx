@@ -1,12 +1,17 @@
 import "./style.css";
 
-function Card({ details, handler }) {
+function Card({ details, handler, className }) {
   return (
-    <li className="list__card">
-      <div>
+    <li className={className}>
+      <div className="card__details">
         <h3>{details.description}</h3>
-        <span>{details.value}</span>
-        <button onClick={handler}>Apagar</button>
+        <span>
+          {details.value.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
+        <button onClick={handler}></button>
       </div>
       <p>{details.type}</p>
     </li>

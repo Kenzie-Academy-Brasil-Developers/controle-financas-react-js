@@ -7,7 +7,8 @@ import "./css/base.css";
 import "./css/App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [listTransactions, setListTransactions] = useState([]);
 
   function handleLogin() {
     setLoggedIn(!loggedIn);
@@ -16,7 +17,11 @@ function App() {
   return (
     <div className="App">
       {loggedIn ? (
-        <Homepage handler={handleLogin}/>
+        <Homepage
+          handler={handleLogin}
+          transactions={listTransactions}
+          setTransactions={setListTransactions}
+        />
       ) : (
         <LandingPage handler={handleLogin} />
       )}

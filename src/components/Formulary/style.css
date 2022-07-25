@@ -15,12 +15,13 @@ input,
 select {
   border: none;
   background-color: var(--color-grey-2);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0 1rem;
   box-sizing: border-box;
   font-family: inherit;
   height: 2.7rem;
   color: var(--color-grey-3);
+  cursor: pointer;
 }
 
 .content__form label {
@@ -64,7 +65,7 @@ select {
 
 .content__form button {
   margin: 0 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
   height: 2.7rem;
 }
 
